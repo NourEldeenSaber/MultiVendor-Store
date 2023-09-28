@@ -33,19 +33,20 @@ class OrderCreatedNotification extends Notification
      */
     public function via($notifiable)
     {
+        
         return ['database'];
 
-        $channels = ['database'];
-        if ($notifiable->notification_preferences['order_created']['sms'] ?? false) {
-            $channels[] = 'vonage';
-        }
-        if ($notifiable->notification_preferences['order_created']['mail'] ?? false) {
-            $channels[] = 'mail';
-        }
-        if ($notifiable->notification_preferences['order_created']['broadcast'] ?? false) {
-            $channels[] = 'broadcast';
-        }
-        return $channels;
+        // $channels = ['database'];
+        // if ($notifiable->notification_preferences['order_created']['sms'] ?? false) {
+        //     $channels[] = 'vonage';
+        // }
+        // if ($notifiable->notification_preferences['order_created']['mail'] ?? false) {
+        //     $channels[] = 'mail';
+        // }
+        // if ($notifiable->notification_preferences['order_created']['broadcast'] ?? false) {
+        //     $channels[] = 'broadcast';
+        // }
+        // return $channels;
     }
 
     /**
